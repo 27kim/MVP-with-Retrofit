@@ -67,20 +67,12 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieDeta
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-//        <androidx.appcompat.widget.Toolbar
-//        android:id="@+id/toolbar"
-//        android:layout_width="match_parent"
-//        android:layout_height="?attr/actionBarSize"
-//        app:layout_collapseMode="pin"
-//        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.BLACK);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
 
         initCollapsingToolbar();
 

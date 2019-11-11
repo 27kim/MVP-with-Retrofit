@@ -10,7 +10,6 @@ public interface MovieListContract {
         void onResponseFailure(Throwable throwable);
         void showProgress();
         void hideProgress();
-
         void onMovieItemClick(int position);
     }
 

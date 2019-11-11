@@ -8,8 +8,6 @@ import com.mvp_with_retrofit.adapter.MoviesAdapter;
 import com.mvp_with_retrofit.model.Movie;
 import com.mvp_with_retrofit.movie_details.MovieDetailsActivity;
 import com.mvp_with_retrofit.utils.GridSpacingItemDecoration;
-import com.orhanobut.logger.AndroidLogAdapter;
-import com.orhanobut.logger.Logger;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,9 +44,7 @@ public class MovieListActivity extends AppCompatActivity implements MovieListCon
 
         getSupportActionBar().setTitle(getString(R.string.most_popular_movies));
         //Log test
-        Logger.addLogAdapter(new AndroidLogAdapter());
         LOGD("Log Test");
-        Logger.d("Log Test");
 
         initUI();
 
@@ -69,12 +63,10 @@ public class MovieListActivity extends AppCompatActivity implements MovieListCon
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(this, 10), true));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
     }
 
 
     public void setDataToRecyclerView(List<Movie> movies) {
-        Logger.d(movies);
         mMovieList.addAll(movies);
         mMoviesAdapter.notifyDataSetChanged();
     }
